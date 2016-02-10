@@ -1,4 +1,4 @@
-class ReceiptsController < ApplicationController
+class ReceiptsController < AuthenticatedController
   before_action :set_receipt, only: [:show, :edit, :update, :destroy]
 
   # GET /receipts
