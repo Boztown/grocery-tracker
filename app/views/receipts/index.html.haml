@@ -1,0 +1,19 @@
+.page-header
+  = link_to new_receipt_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Receipt
+  %h1 Listing receipts
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Shopping date
+        %th
+        %th
+        %th
+    %tbody
+      = content_tag_for(:tr, @receipts) do |receipt|
+        %td= receipt.shopping_date
+        %td= link_to 'Show', receipt
+        %td= link_to 'Edit', edit_receipt_path(receipt)
+        %td= link_to 'Destroy', receipt, method: :delete, data: { confirm: 'Are you sure?' }
