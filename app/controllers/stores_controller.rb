@@ -14,6 +14,7 @@ class StoresController < AuthenticatedController
 
   # GET /stores/new
   def new
+    binding.pry
     @store = Store.new
   end
 
